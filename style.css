@@ -423,7 +423,7 @@ a {
 
 .dish-info .price {
     font-weight: bold;
-    color: #4CAF50; /* Verde per il prezzo (rimane per buona visibilità) */
+    color: #333333; /* Modificato: Prezzo dello stesso colore del testo nelle caselle */
     font-size: 1.1em;
 }
 
