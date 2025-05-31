@@ -34,12 +34,12 @@ a {
     align-items: center;
     font-size: 1.1em;
     font-weight: bold;
-    color: #FFFFFF; /* Bianco tipico delle app delivery, ben visibile sul nero */
+    color: #FFFFFF; /* Indirizzo in bianco */
 }
 
 .location-picker i {
     margin-right: 8px;
-    color: #FFFFFF;
+    color: #FFFFFF; /* Anche l'icona dell'indirizzo in bianco */
 }
 
 .search-bar {
@@ -69,7 +69,6 @@ a {
 .search-bar input::placeholder { /* Stile per il placeholder */
     color: #bbbbbb;
 }
-
 
 .search-bar.mini {
     flex-grow: 0;
@@ -236,7 +235,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #aaaaaa; /* Colore chiaro per gli item inattivi */
+    color: #FFFFFF; /* Colore bianco per gli item inattivi */
     font-size: 0.8em;
     transition: color 0.2s ease;
 }
@@ -247,11 +246,11 @@ a {
 }
 
 .nav-item.active {
-    color: #FFFFFF; /*Bianco*/
+    color: #FF8C00; /* Home arancione quando attivo */
 }
 
 .nav-item:hover {
-    color: #FFFFFF;
+    color: #FF8C00; /* Anche all'hover possono diventare arancioni */
 }
 
 /* Stile per restaurant-menu.html */
@@ -270,14 +269,14 @@ a {
 
 .back-button {
     font-size: 1.5em;
-    color: #FFFFFF;
+    color: #4CAF50; /* Il verde rimane per il pulsante indietro */
     padding: 5px;
 }
 
 .cart-icon {
     position: relative;
     font-size: 1.5em;
-    color: #FFFFFF;
+    color: #4CAF50; /* Il verde rimane per l'icona del carrello */
     margin-left: auto;
 }
 
@@ -362,12 +361,12 @@ a {
 }
 
 .menu-nav-item.active {
-    background-color: #FFFFFF; /* Bianco */
+    background-color: #4CAF50; /* Verde attivo */
     color: white;
 }
 
 .menu-nav-item:hover {
-    background-color: #FFFFFF; /* Colore al passaggio del mouse */
+    background-color: #555555; /* Colore al passaggio del mouse */
 }
 
 .menu-section {
@@ -422,13 +421,13 @@ a {
 
 .dish-info .price {
     font-weight: bold;
-    color: #FFFFFF; /* Bianco per il prezzo (rimane per buona visibilità) */
+    color: #4CAF50; /* Verde per il prezzo (rimane per buona visibilità) */
     font-size: 1.1em;
 }
 
 .add-to-cart-btn {
-    background-color: #FFFFFF;
-    color: white;
+    background-color: #000000; /* Pulsante "più" nero */
+    color: white; /* Testo del pulsante bianco */
     border: none;
     border-radius: 50%;
     width: 35px;
@@ -446,7 +445,7 @@ a {
 }
 
 .add-to-cart-btn:hover {
-    background-color: ##FFFFFF;
+    background-color: #333333; /* Grigio scuro all'hover per il pulsante nero */
 }
 
 /* Responsività per schermi più grandi (simula un contenitore mobile centrato) */
