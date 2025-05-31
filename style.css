@@ -39,7 +39,7 @@ a {
 
 .location-picker i {
     margin-right: 8px;
-    color: #FFFFFF;
+    color: #FF8C00; /* Modificato: freccia arancione */
 }
 
 .search-bar {
@@ -54,7 +54,7 @@ a {
 }
 
 .search-bar i {
-    color: #bbbbbb; /* Colore chiaro per le icone */
+    color: #FF8C00; /* Modificato: icona cerca arancione */
     margin-right: 10px;
 }
 
@@ -64,10 +64,10 @@ a {
     outline: none;
     width: 100%;
     font-size: 1em;
-    color: #FFFFFF; /* Testo input bianco */
+    color: #FF8C00; /* Modificato: testo input arancione */
 }
 .search-bar input::placeholder { /* Stile per il placeholder */
-    color: #bbbbbb;
+    color: #FF8C00; /* Modificato: placeholder arancione */
 }
 
 
@@ -236,7 +236,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #aaaaaa; /* Colore chiaro per gli item inattivi */
+    color: #FF8C00; /* Modificato: colore arancione per gli item inattivi */
     font-size: 0.8em;
     transition: color 0.2s ease;
 }
@@ -244,14 +244,15 @@ a {
 .nav-item i {
     font-size: 1.5em;
     margin-bottom: 5px;
+    color: #FF8C00; /* Modificato: colore arancione per le icone */
 }
 
 .nav-item.active {
-    color: #4CAF50; /* Verde attivo */
+    color: #FF8C00; /* Modificato: colore arancione attivo */
 }
 
 .nav-item:hover {
-    color: #4CAF50;
+    color: #FFA500; /* Modificato: colore arancione al passaggio del mouse (leggermente più chiaro) */
 }
 
 /* Stile per restaurant-menu.html */
@@ -270,7 +271,7 @@ a {
 
 .back-button {
     font-size: 1.5em;
-    color: #4CAF50;
+    color: #FF8C00; /* Modificato: freccia indietro arancione */
     padding: 5px;
 }
 
@@ -427,7 +428,7 @@ a {
 }
 
 .add-to-cart-btn {
-    background-color: #4CAF50;
+    background-color: #FF8C00; /* Modificato: pulsante "+" arancione */
     color: white;
     border: none;
     border-radius: 50%;
@@ -446,7 +447,7 @@ a {
 }
 
 .add-to-cart-btn:hover {
-    background-color: #45a049;
+    background-color: #E67F00; /* Modificato: arancione leggermente più scuro per hover */
 }
 
 /* Responsività per schermi più grandi (simula un contenitore mobile centrato) */
