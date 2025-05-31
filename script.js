@@ -24,61 +24,111 @@ document.addEventListener('DOMContentLoaded', () => {
                 cuisine: 'Hamburger, Fast Food',
                 rating: '4.3',
                 deliveryTime: '20-30 min',
-                image: 'https://via.placeholder.com/400x200/88B04B/FFFFFF?text=Fast+Burger+Banner'
+                // AGGIORNATO: Percorso alla tua immagine Fast Burger
+                image: 'images/Fast Burger.jpg'
             },
             'grill-master': {
                 name: 'Grill Master',
-                cuisine: 'Grill, Hamburger, Carne',
-                rating: '4.5',
+                cuisine: 'Grill, BBQ',
+                rating: '4.7',
                 deliveryTime: '35-45 min',
-                image: 'https://via.placeholder.com/400x200/F7CAC9/FFFFFF?text=Grill+Master+Banner'
+                image: 'https://via.placeholder.com/400x200/FFC30B/333333?text=Grill+Master+Banner'
+            },
+            'pizza-palace': {
+                name: 'Pizza Palace',
+                cuisine: 'Pizza, Italiana',
+                rating: '4.9',
+                deliveryTime: '20-30 min',
+                image: 'https://via.placeholder.com/400x200/DAF7A6/333333?text=Pizza+Palace+Banner'
+            },
+            'vegan-delight': {
+                name: 'Vegan Delight',
+                cuisine: 'Vegano, Salutare',
+                rating: '4.5',
+                deliveryTime: '30-40 min',
+                image: 'https://via.placeholder.com/400x200/C70039/FFFFFF?text=Vegan+Delight+Banner'
+            },
+            'sushi-express': {
+                name: 'Sushi Express',
+                cuisine: 'Sushi, Giapponese',
+                rating: '4.6',
+                deliveryTime: '40-50 min',
+                image: 'https://via.placeholder.com/400x200/900C3F/FFFFFF?text=Sushi+Express+Banner'
+            },
+            'taco-fiesta': {
+                name: 'Taco Fiesta',
+                cuisine: 'Messicano, Tacos',
+                rating: '4.2',
+                deliveryTime: '25-35 min',
+                image: 'https://via.placeholder.com/400x200/581845/FFFFFF?text=Taco+Fiesta+Banner'
+            },
+            'pasta-amore': {
+                name: 'Pasta Amore',
+                cuisine: 'Pasta, Italiana',
+                rating: '4.7',
+                deliveryTime: '30-40 min',
+                image: 'https://via.placeholder.com/400x200/FF5733/FFFFFF?text=Pasta+Amore+Banner'
+            },
+            'healthy-bites': {
+                name: 'Healthy Bites',
+                cuisine: 'Salutare, Insalate',
+                rating: '4.5',
+                deliveryTime: '20-30 min',
+                image: 'https://via.placeholder.com/400x200/C70039/FFFFFF?text=Healthy+Bites+Banner'
             },
             'urban-burger': {
                 name: 'Urban Burger',
                 cuisine: 'Hamburger, Vegan',
                 rating: '4.4',
                 deliveryTime: '30-40 min',
-                image: 'https://via.placeholder.com/400x200/92A8D1/FFFFFF?text=Urban+Burger+Banner'
+                image: 'https://via.placeholder.com/400x200/92A8D1/FFFFFF?text=Urban+Burger'
             }
         };
 
-        if (restaurantId && restaurantsData[restaurantId]) {
-            const restaurant = restaurantsData[restaurantId];
-            document.getElementById('restaurant-name-header').textContent = restaurant.name;
-            document.getElementById('restaurant-name-overlay').textContent = restaurant.name;
-            document.getElementById('restaurant-cuisine-overlay').textContent = 'Cucina: ' + restaurant.cuisine;
-            document.getElementById('restaurant-rating-overlay').textContent = restaurant.rating;
-            document.getElementById('restaurant-delivery-time-overlay').textContent = restaurant.deliveryTime;
-            document.getElementById('restaurant-banner-image').src = restaurant.image;
+
+        const restaurant = restaurantsData[restaurantId];
+
+        if (restaurant) {
+            // Aggiorna il banner del ristorante
+            const bannerImage = document.getElementById('restaurant-banner-image');
+            if (bannerImage) {
+                bannerImage.src = restaurant.image;
+                bannerImage.alt = `Banner di ${restaurant.name}`;
+            }
+
+            // Aggiorna i dettagli del ristorante nell'overlay
+            const restaurantNameOverlay = document.getElementById('restaurant-name-overlay');
+            if (restaurantNameOverlay) {
+                restaurantNameOverlay.textContent = restaurant.name;
+            }
+
+            const restaurantCuisineOverlay = document.getElementById('restaurant-cuisine-overlay');
+            if (restaurantCuisineOverlay) {
+                restaurantCuisineOverlay.textContent = `Cucina: ${restaurant.cuisine}`;
+            }
+
+            const restaurantRatingOverlay = document.getElementById('restaurant-rating-overlay');
+            if (restaurantRatingOverlay) {
+                restaurantRatingOverlay.textContent = restaurant.rating;
+            }
+
+            const restaurantDeliveryTimeOverlay = document.getElementById('restaurant-delivery-time-overlay');
+            if (restaurantDeliveryTimeOverlay) {
+                restaurantDeliveryTimeOverlay.textContent = restaurant.deliveryTime;
+            }
+
+            // Aggiorna il nome del ristorante nell'header
+            const restaurantNameHeader = document.getElementById('restaurant-name-header');
+            if (restaurantNameHeader) {
+                restaurantNameHeader.textContent = restaurant.name;
+            }
         } else {
-            // Reindirizza o mostra un messaggio di errore se il ristorante non è trovato
-            document.getElementById('restaurant-name-header').textContent = 'Ristorante non trovato';
-            document.getElementById('restaurant-name-overlay').textContent = 'Ristorante non trovato';
+            console.error('Ristorante non trovato:', restaurantId);
+            // Reindirizza o mostra un messaggio di errore se il ristorante non esiste
+            // window.location.href = 'index.html';
         }
 
-        // Gestione scorrimento automatico alle sezioni del menu
-        const menuNavItems = document.querySelectorAll('.menu-nav-item');
-        menuNavItems.forEach(item => {
-            item.addEventListener('click', function(e) {
-                e.preventDefault();
-                menuNavItems.forEach(nav => nav.classList.remove('active'));
-                this.classList.add('active');
-                const targetId = this.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
-                if (targetSection) {
-                    // Scorrimento aggiustato per la barra fissa
-                    const headerHeight = document.querySelector('.app-header').offsetHeight;
-                    const navHeight = document.querySelector('.menu-categories-nav').offsetHeight;
-                    const offset = headerHeight + navHeight + 20; // + un po' di padding
-                    window.scrollTo({
-                        top: targetSection.offsetTop - offset,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Simula l'aggiunta al carrello
+        // Gestione dell'aggiunta al carrello
         const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
         const cartCount = document.querySelector('.cart-count');
         let currentCartCount = 0;
@@ -93,6 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Aggiorna la sezione attiva della navbar del menu durante lo scroll
+        const menuNavItems = document.querySelectorAll('.menu-nav a'); // Assicurati che questo selettore sia corretto per la tua navbar del menu
         const sections = document.querySelectorAll('.menu-section');
         const observerOptions = {
             root: null,
