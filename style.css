@@ -251,7 +251,7 @@ a {
 }
 
 .nav-item:hover {
-    color: #4CAF50;
+    color: #FFFFFF;
 }
 
 /* Stile per restaurant-menu.html */
@@ -270,7 +270,7 @@ a {
 
 .back-button {
     font-size: 1.5em;
-    color: #4CAF50;
+    color: #FFFFFF;
     padding: 5px;
 }
 
@@ -362,7 +362,7 @@ a {
 }
 
 .menu-nav-item.active {
-    background-color: #4CAF50; /* Verde attivo */
+    background-color: #FFFFFF; /* Verde attivo */
     color: white;
 }
 
@@ -422,12 +422,12 @@ a {
 
 .dish-info .price {
     font-weight: bold;
-    color: #4CAF50; /* Verde per il prezzo (rimane per buona visibilità) */
+    color: #FFFFFF; /* Verde per il prezzo (rimane per buona visibilità) */
     font-size: 1.1em;
 }
 
 .add-to-cart-btn {
-    background-color: #4CAF50;
+    background-color: #FFFFFF;
     color: white;
     border: none;
     border-radius: 50%;
