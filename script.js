@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Gestione del menu del ristorante
     if (document.body.classList.contains('restaurant-menu-content')) {
         const urlParams = new URLSearchParams(window.location.search);
-        const restaurantId = urlParams.get('restaurant');
+        const restaurantId = urlParams.get('id');
 
         const restaurantsData = {
             'burger-house': {
