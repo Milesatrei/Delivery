@@ -3,104 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carpet Courier - Home</title>
+    <title>Menu Ristorante - Carpet Courier</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header class="app-header">
-        <div class="location-picker">
-            <i class="fas fa-map-marker-alt"></i>
-            <span>Bologna, Via Rialto, 15</span>
-        </div>
-        <div class="search-bar">
-            <i class="fas fa-search"></i>
-            <input type="text" placeholder="Cerca ristoranti o piatti...">
+    <header class="app-header menu-header">
+        <a href="javascript:history.back()" class="back-button" aria-label="Torna indietro"><i class="fas fa-arrow-left"></i></a>
+        <h1 id="restaurant-name-header">Nome Ristorante</h1>
+        <div class="cart-icon" role="button" aria-label="Carrello della spesa" tabindex="0">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
         </div>
     </header>
 
-    <main class="app-main-content">
-        <section class="promotions">
-            <h2>Offerte per te</h2>
-            <div class="promo-card">
-                <img src="images/promo 1.jpeg" alt="Promo 1">
-            </div>
-            <div class="promo-card">
-                <img src="images/promo 2.jpeg" alt="Promo 2">
-            </div>
-        </section>
-
-        <section class="categories">
-            <h2>Cosa vuoi mangiare oggi?</h2>
-            <div class="category-grid">
-                <a href="#" class="category-card" data-category="pizza">
-                    <img src="images/pizza.jpg" alt="Pizza">
-                    <span>Pizza</span>
-                </a>
-                <a href="restaurants.html" class="category-card" data-category="hamburger">
-                    <img src="images/hamburger.jpg" alt="Hamburger">
-                    <span>Hamburger</span>
-                </a>
-                <a href="#" class="category-card" data-category="sushi">
-                    <img src="images/sushi.jpg" alt="Sushi">
-                    <span>Sushi</span>
-                </a>
-                <a href="#" class="category-card" data-category="italiana">
-                    <img src="images/italiana.jpg" alt="Italiana">
-                    <span>Italiana</span>
-                </a>
-                <a href="#" class="category-card" data-category="dessert">
-                    <img src="images/dolci.jpg" alt="Dolci">
-                    <span>Dolci</span>
-                </a>
-            </div>
-        </section>
-
-        <section class="featured-restaurants">
-            <h2>Ristoranti in evidenza</h2>
-            <div class="restaurant-card">
-                <img src="images/pizzeria da gigi.jpg" alt="Pizzeria Da Gigi" class="restaurant-image">
-                <div class="restaurant-info">
-                    <h3>Pizzeria Da Gigi</h3>
-                    <p class="cuisine">Pizza, Italiana</p>
-                    <div class="details">
-                        <span class="rating"><i class="fas fa-star"></i> 4.7</span>
-                        <span class="delivery-time">30-40 min</span>
-                    </div>
+    <main class="app-main-content restaurant-menu-content">
+        <div class="restaurant-info-banner">
+            <img id="restaurant-banner-image" src="images/Burger House.jpg" alt="Immagine di copertina del ristorante">
+            <div class="restaurant-details-overlay">
+                <h2 id="restaurant-name-overlay">Nome Ristorante</h2>
+                <p id="restaurant-cuisine-overlay">Cucina: Italiana, Americana</p>
+                <div class="details">
+                    <span class="rating" aria-label="Valutazione del ristorante"><i class="fas fa-star"></i> <span id="restaurant-rating-overlay">4.5</span></span>
+                    <span class="delivery-time" aria-label="Tempo di consegna stimato"><i class="fas fa-clock"></i> <span id="restaurant-delivery-time-overlay">30-40 min</span></span>
                 </div>
             </div>
-            <div class="restaurant-card">
-                <img src="images/sushi zen.jpg" alt="Sushi Zen" class="restaurant-image">
-                <div class="restaurant-info">
-                    <h3>Sushi Zen</h3>
-                    <p class="cuisine">Sushi, Giapponese</p>
-                    <div class="details">
-                        <span class="rating"><i class="fas fa-star"></i> 4.6</span>
-                        <span class="delivery-time">45-55 min</span>
+        </div>
+
+        <nav class="menu-categories-nav">
+            <a href="#hamburger" class="menu-nav-item active" aria-controls="hamburger">Hamburger</a>
+            <a href="#fritti" class="menu-nav-item" aria-controls="fritti">Fritti</a>
+            <a href="#pizza" class="menu-nav-item" aria-controls="pizza">Pizza</a>
+            <a href="#dolce" class="menu-nav-item" aria-controls="dolce">Dolce</a>
+            <a href="#bevande" class="menu-nav-item" aria-controls="bevande">Bevande</a>
+        </nav>
+
+        <section id="hamburger" class="menu-section" aria-labelledby="hamburger-heading">
+            <h3 id="hamburger-heading">Hamburger</h3>
+            <div class="dish-list">
+                <div class="dish-card" data-dish-name="Classic Burger" data-dish-price="9.90">
+                    <img src="images/hamburger.jpg" alt="Classic Burger">
+                    <div class="dish-info">
+                        <h4>Classic Burger</h4>
+                        <p>Hamburger di manzo 200g, cheddar, lattuga, pomodoro, salsa speciale.</p>
+                        <span class="price">9.90 €</span>
+                        <button class="add-to-cart-btn" aria-label="Aggiungi Classic Burger al carrello"><i class="fas fa-plus"></i></button>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
-
-    <nav class="app-navbar">
-        <a href="#" class="nav-item active">
-            <i class="fas fa-home"></i>
-            <span>Home</span>
-        </a>
-        <a href="#" class="nav-item">
-            <i class="fas fa-search"></i>
-            <span>Cerca</span>
-        </a>
-        <a href="#" class="nav-item">
-            <i class="fas fa-receipt"></i>
-            <span>Ordini</span>
-        </a>
-        <a href="#" class="nav-item">
-            <i class="fas fa-user"></i>
-            <span>Profilo</span>
-        </a>
-    </nav>
-    <script src="script.js"></script>
-</body>
-</html>
+                <div class="dish-card" data-dish-name="Chicken Burger" data-dish-price="8.50">
+                    <img src="images/Hamburger con pollo fritto.jpg" alt="Chicken Burger">
+                    <div class="dish-info">
+                        <h4>Chicken Burger</h4>
+                        <p>Petto di pollo croccante, insalata, maionese, bacon.</p>
+                        <span class="price">8.50 €</span>
+                        <button class="add-to-cart-btn" aria-label="Aggiungi Chicken Burger al carrello"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+                <div class="dish-card" data-dish-name="Veggie Burger" data-dish-price="10.50">
+                    <img src="images/Burger vegetale, avocado, pomodoro secco, spinaci..jpg" alt="Veggie Burger">
+                    <div class="dish-info">
+                        <h4>Veggie Burger</h4>
+                        <p>Burger vegetale, avocado, pomodoro secco, spinaci.</p>
+                        <span class="price">10.50 €</span>
+                        <button class="add-to-cart-btn" aria-label="Aggiungi Veggie Burger al carrello"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+                <div class="dish-card" data-dish-name="Double Bacon Burger" data-dish-price="12.90">
+                    <img src="images/hamburger.jpg" alt="Double Bacon Burger">
+                    <div class="dish-info">
+                        <h4>Double Bacon Burger</h4>
+                        <p>Doppio hamburger, doppio bacon croccante, cipolla caramellata.</p>
+                        <span class="price">12.90 €</span>
+                        <button class="add-to-cart-btn" aria-label="Aggiungi Double Bacon Burger al carrello"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+                <div class="dish-card" data-dish-name="Spicy Smash Burger" data-dish-price="11.20">
+                    <img src="images/hamburger con jalapenos.jpg" alt="Spicy Smash Burger">
+                    <div class="dish-info">
+                        <h4>Spicy Smash Burger</h4>
+                        <p>Hamburger schiacciato, jalapeños, salsa piccante, formaggio.</p>
+                        <span class="price">11.20 €</span>
+                        <button class="add-to-cart-btn" aria-label="Aggiungi Spicy Smash Burger al carrello"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+                <div class="dish-card" data-dish-name="BBQ Burger" data-dish-price="10.90">
+                    <img src="images/Hamburger, cipolla croccante fritta, formaggio, salsa affumicata.jpg" alt="BBQ Burger">
+                    <div class="dish-info">
+                        <h4>BBQ Burger</h4>
+                        <p>Hamburger con salsa BBQ, anelli di cipolla fritti, formaggio svizzero.</p>
+                        <span class="price">10.90 €</span>
+                        <button class="add-to-cart-btn" aria-label="Aggiungi BBQ Burger al carrello"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+                <div class="dish-card" data-dish-name="Mushroom Swiss Burger" data-dish-price="10.00">
+                    <img src="images/hamburger con funghi.jpg" alt="Mushroom Swiss Burger">
+                    <div class="dish-info">
+                        <h4>Mushroom Swiss</h4>
+                        <p>Hamburger, funghi saltati, formaggio svizzero fuso.</p>
+                        <span class="price">10.00 €</span>
+                        <button class="add-to-cart-btn" aria-label="Aggiungi Mushroom Swiss Burger al carrello"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+                <div class="dish-card" data-dish-name="Italian Burger" data-dish-price="11.50">
+                    <img src="images/Hamburger, provolone, rucola, pomodoro secco, pesto..jpg" alt="Italian Burger">
+                    <div class="dish-info">
+                        <h4>Italian Burger</h4>
+                        <p>Hamburger, provolone, rucola, pomodoro secco, pesto.</p>
+                        <span class="price">11.50 €</span>
+                        <button class="add-to-cart-btn" aria-label="Aggiungi Italian Burger al carrello"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+                <div class="dish-card" data-dish-name="Avocado Ranch Burger" data-dish-price="11.00">
+                    <img src="images/Hamburger, salsa ranch, avocado, cipolla rossa..jpg" alt="Avocado Ranch Burger">
+                    <div class="dish-info">
+                        <h4>Avocado Ranch</h4>
+                        <p>Hamburger, salsa ranch, avocado, cipolla rossa.</p>
+                        <span class="price">11.00 €</span>
+                        <button class="add-to-cart-btn" aria-label="Aggiungi Avocado Ranch Burger al carrello"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+                <div class="dish-card" data-dish-name="Crispy Onion Burger" data-dish-price="9.80">
+                    <img src="images/Hamburger, cipolla croccante fritta, formaggio, salsa affumicata..jpg" alt="Crispy Onion Burger">
+                    <div class="dish-info">
+                        <h4>Crispy Onion Burger</h4>
+                        <p>Hamburger, cipolla croccante fritta, formaggio, salsa affumicata.</p>
+                        <span class="price
