@@ -1,150 +1,311 @@
-/* --- Variabili CSS --- */
-:root {
-    --primary-color: #ff6b6b; /* Rosso caldo per accenti */
-    --secondary-color: #4CAF50; /* Verde per elementi attivi/successo */
-    --text-color: #333; /* Testo scuro */
-    --light-text-color: #666; /* Testo più chiaro */
-    --background-color: #f8f8f8; /* Sfondo generale */
-    --card-background: #fff; /* Sfondo schede */
-    --border-color: #eee; /* Bordi leggeri */
-    --header-bg: #fff; /* Sfondo header */
-    --navbar-bg: #fff; /* Sfondo navbar */
-    --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.1);
-    --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.15);
-    --spacing-xs: 8px;
-    --spacing-sm: 12px;
-    --spacing-md: 16px;
-    --spacing-lg: 24px;
-    --border-radius: 8px;
-}
-
-/* --- Reset CSS e Stili Base --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Stile Generale */
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--background-color);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    background-color: #000000; /* Sfondo nero puro per l'intera app */
+    color: #FFFFFF; /* Testo bianco puro */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    padding-bottom: 70px; /* Spazio per la navbar inferiore fissa */
 }
 
 a {
     text-decoration: none;
-    color: var(--primary-color);
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-family: inherit;
     color: inherit;
-    padding: 0;
 }
 
-/* --- Animazioni --- */
-@keyframes pop {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
-}
-
-.cart-count.animate-pop {
-    animation: pop 0.3s ease-out;
-}
-
-/* --- Header dell'Applicazione --- */
+/* Header dell'App */
 .app-header {
+    background-color: #1a1a1a; /* Un nero leggermente più chiaro per l'header per distinzione */
+    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--spacing-sm) var(--spacing-md);
-    background-color: var(--header-bg);
-    box-shadow: var(--shadow-light);
-    position: fixed;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.4); /* Ombra più definita su nero */
+    position: sticky;
     top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000; /* Assicura che sia sopra gli altri contenuti */
-    height: 60px; /* Altezza fissa per l'header */
+    z-index: 1000;
 }
 
-.app-header h1 {
-    font-size: 1.2em;
-    color: var(--text-color);
-    text-align: center;
-    flex-grow: 1; /* Prende lo spazio disponibile */
+.location-picker {
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #FFFFFF; /* Bianco tipico delle app delivery, ben visibile sul nero */
 }
 
-.app-header .back-button {
-    font-size: 1.2em;
-    color: var(--light-text-color);
-    padding: var(--spacing-xs);
-    border-radius: 50%;
-    transition: background-color 0.2s ease;
+.location-picker i {
+    margin-right: 8px;
+    color: #FFFFFF;
 }
 
-.app-header .back-button:hover,
-.app-header .back-button:focus {
-    background-color: var(--border-color);
+.search-bar {
+    background-color: #333333; /* Sfondo scuro per la barra di ricerca */
+    border-radius: 25px;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    margin-left: 20px;
+    max-width: 300px;
+}
+
+.search-bar i {
+    color: #bbbbbb; /* Colore chiaro per le icone */
+    margin-right: 10px;
+}
+
+.search-bar input {
+    border: none;
+    background: none;
     outline: none;
+    width: 100%;
+    font-size: 1em;
+    color: #FFFFFF; /* Testo input bianco */
+}
+.search-bar input::placeholder { /* Stile per il placeholder */
+    color: #bbbbbb;
 }
 
-.app-header .cart-icon {
-    position: relative;
+
+.search-bar.mini {
+    flex-grow: 0;
+    margin-left: auto;
+    width: 180px;
+}
+
+/* Contenuto Principale */
+.app-main-content {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.app-main-content h2,
+.menu-section h3 { /* Anche i titoli delle sezioni del menu */
+    font-size: 1.6em;
+    margin-bottom: 20px;
+    color: #FFFFFF; /* Testo bianco per i titoli */
+    font-weight: bold;
+}
+
+/* Sezioni Promozioni */
+.promotions {
+    margin-bottom: 30px;
+}
+
+.promo-card {
+    margin-bottom: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.promo-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Sezioni Categorie */
+.categories {
+    margin-bottom: 30px;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+}
+
+.category-card {
+    background-color: #FF8C00; /* Arancione scuro per le caselle delle categorie */
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+    color: #333333; /* Testo scuro per garantire leggibilità su arancione */
+}
+
+.category-card:hover {
+    transform: translateY(-3px);
+}
+
+.category-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.category-card span {
+    font-weight: bold;
+    font-size: 0.95em;
+}
+
+/* Sezioni Ristoranti */
+.restaurants-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.restaurant-card {
+    background-color: #FF8C00; /* Arancione scuro per le caselle dei ristoranti */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+    color: #333333; /* Testo scuro sulle caselle arancioni */
+}
+
+.restaurant-card:hover {
+    transform: translateY(-3px);
+}
+
+.restaurant-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.restaurant-info {
+    padding: 15px;
+}
+
+.restaurant-info h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #333333; /* Testo scuro */
     font-size: 1.3em;
-    color: var(--primary-color);
-    padding: var(--spacing-xs);
-    cursor: pointer;
-    margin-left: auto; /* Sposta a destra */
 }
 
-.app-header .cart-count {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    background-color: var(--secondary-color);
+.restaurant-info .cuisine {
+    color: #666666; /* Grigio più scuro per la cucina */
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.restaurant-info .details {
+    display: flex;
+    align-items: center;
+    font-size: 0.85em;
+    color: #555555; /* Grigio più scuro per i dettagli */
+    gap: 15px;
+}
+
+.restaurant-info .details span i {
+    color: #FFD700; /* Giallo brillante per le stelle per un buon contrasto sull'arancione */
+    margin-right: 5px;
+}
+
+.restaurant-info .price-range {
+    background-color: #FFA500; /* Un arancione leggermente più chiaro per il range di prezzo */
+    color: #333333; /* Testo scuro */
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 0.8em;
+}
+
+/* Navigation Bar */
+.app-navbar {
+    background-color: #1a1a1a; /* Sfondo scuro per la navbar */
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.4);
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #aaaaaa; /* Colore chiaro per gli item inattivi */
+    font-size: 0.8em;
+    transition: color 0.2s ease;
+}
+
+.nav-item i {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.nav-item.active {
+    color: #4CAF50; /* Verde attivo */
+}
+
+.nav-item:hover {
+    color: #4CAF50;
+}
+
+/* Stile per restaurant-menu.html */
+.menu-header {
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.menu-header h1 {
+    font-size: 1.5em;
+    margin: 0;
+    flex-grow: 1;
+    text-align: center;
+    color: #FFFFFF; /* Testo bianco */
+}
+
+.back-button {
+    font-size: 1.5em;
+    color: #4CAF50;
+    padding: 5px;
+}
+
+.cart-icon {
+    position: relative;
+    font-size: 1.5em;
+    color: #4CAF50;
+    margin-left: auto;
+}
+
+.cart-count {
+    background-color: #FF6B6B; /* Rosso per il badge */
     color: white;
     font-size: 0.7em;
-    padding: 2px 6px;
     border-radius: 50%;
-    min-width: 18px;
+    padding: 2px 6px;
+    position: absolute;
+    top: -5px;
+    right: -5px;
     text-align: center;
-    line-height: 1.2;
-    transform: translate(25%, -25%);
+    min-width: 18px;
 }
 
-/* --- Contenuto Principale --- */
-.app-main-content {
-    padding-top: 60px; /* Spazio per l'header fisso */
-}
-
-/* --- Banner del Ristorante --- */
 .restaurant-info-banner {
     position: relative;
     width: 100%;
-    height: 200px; /* Altezza fissa del banner */
+    height: 200px;
     overflow: hidden;
-    background-color: #f0f0f0; /* Colore di sfondo di fallback */
+    margin-bottom: 20px;
 }
 
 .restaurant-info-banner img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Assicura che l'immagine copra l'area */
+    object-fit: cover;
 }
 
 .restaurant-details-overlay {
@@ -152,230 +313,190 @@ button {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+    background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.4)); /* Sfumatura più scura e intensa */
     color: white;
-    padding: var(--spacing-md);
-    padding-top: var(--spacing-lg);
+    padding: 20px;
 }
 
 .restaurant-details-overlay h2 {
-    font-size: 1.5em;
-    margin-bottom: var(--spacing-xs);
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.8em;
 }
 
 .restaurant-details-overlay p {
+    margin-bottom: 5px;
     font-size: 0.9em;
-    margin-bottom: var(--spacing-sm);
-    color: rgba(255, 255, 255, 0.8);
+    color: #eeeeee; /* Testo più chiaro */
 }
 
 .restaurant-details-overlay .details {
-    display: flex;
-    gap: var(--spacing-md);
-    font-size: 0.85em;
-    color: rgba(255, 255, 255, 0.9);
+    color: #eeeeee; /* Testo più chiaro */
 }
 
-.restaurant-details-overlay .details .rating,
-.restaurant-details-overlay .details .delivery-time {
-    display: flex;
-    align-items: center;
-}
-
-.restaurant-details-overlay .details i {
-    margin-right: 5px;
-    color: gold; /* O un altro colore per le stelle */
-}
-
-/* --- Navigazione delle Categorie del Menu --- */
 .menu-categories-nav {
     display: flex;
-    overflow-x: auto; /* Permette lo scroll orizzontale */
-    -webkit-overflow-scrolling: touch; /* Migliora lo scrolling su iOS */
-    white-space: nowrap; /* Evita il wrapping delle voci */
-    background-color: var(--navbar-bg);
-    box-shadow: var(--shadow-light);
-    padding: var(--spacing-sm) 0;
-    position: sticky; /* Rende la nav sticky */
-    top: 60px; /* Appena sotto l'header */
-    z-index: 999; /* Leggermente sotto l'header */
-    border-bottom: 1px solid var(--border-color);
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333333; /* Bordo più scuro */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
 }
 
 .menu-categories-nav::-webkit-scrollbar {
-    display: none; /* Nasconde la scrollbar su Webkit */
+    display: none;
 }
 
-.menu-categories-nav .menu-nav-item {
+.menu-nav-item {
     display: inline-block;
-    padding: var(--spacing-xs) var(--spacing-md);
-    margin: 0 var(--spacing-xs);
-    color: var(--light-text-color);
+    padding: 10px 15px;
+    margin-right: 10px;
+    border-radius: 20px;
+    background-color: #333333; /* Sfondo scuro per i tag inattivi */
+    color: #f0f0f0; /* Testo bianco */
     font-weight: bold;
-    border-radius: var(--border-radius);
     transition: background-color 0.2s ease, color 0.2s ease;
-    flex-shrink: 0; /* Impedisce che gli elementi si restringano */
+    flex-shrink: 0;
 }
 
-.menu-categories-nav .menu-nav-item.active {
-    background-color: var(--primary-color);
+.menu-nav-item.active {
+    background-color: #4CAF50; /* Verde attivo */
     color: white;
 }
 
-.menu-categories-nav .menu-nav-item:hover:not(.active),
-.menu-categories-nav .menu-nav-item:focus:not(.active) {
-    background-color: var(--border-color);
-    outline: none;
+.menu-nav-item:hover {
+    background-color: #555555; /* Colore al passaggio del mouse */
 }
 
-/* --- Sezioni del Menu --- */
 .menu-section {
-    padding: var(--spacing-lg) var(--spacing-md);
-    margin-top: 0; /* Nessun margine superiore extra */
-}
-
-.menu-section:first-of-type {
-    padding-top: var(--spacing-md); /* Meno padding per la prima sezione se c'è spazio */
-}
-
-.menu-section h3 {
-    font-size: 1.4em;
-    margin-bottom: var(--spacing-md);
-    color: var(--text-color);
-    text-align: left;
-    border-bottom: 2px solid var(--primary-color);
-    padding-bottom: var(--spacing-xs);
-    display: inline-block; /* Per far sì che il bordo sia solo sotto il testo */
+    margin-bottom: 30px;
 }
 
 .dish-list {
-    display: grid;
-    gap: var(--spacing-md);
-    grid-template-columns: 1fr; /* Una colonna per mobile */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .dish-card {
+    background-color: #FF8C00; /* Arancione scuro per le schede piatto */
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25); /* Ombra più scura */
     display: flex;
-    background-color: var(--card-background);
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: var(--shadow-light);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.dish-card:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-medium);
+    align-items: center;
+    padding: 15px;
+    color: #333333; /* Testo scuro */
 }
 
 .dish-card img {
-    width: 100px; /* Larghezza fissa per l'immagine nella card */
-    min-width: 100px; /* Assicura che l'immagine non si rimpicciolisca */
-    height: 100px;
+    width: 90px;
+    height: 90px;
     object-fit: cover;
-    border-radius: var(--border-radius) 0 0 var(--border-radius);
+    border-radius: 8px;
+    margin-right: 15px;
+    flex-shrink: 0;
 }
 
 .dish-info {
     flex-grow: 1;
-    padding: var(--spacing-sm);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    position: relative; /* Per posizionare il pulsante di aggiunta */
+    position: relative;
 }
 
 .dish-info h4 {
-    font-size: 1.1em;
+    margin-top: 0;
     margin-bottom: 5px;
-    color: var(--text-color);
+    font-size: 1.1em;
+    color: #333333; /* Testo scuro */
 }
 
 .dish-info p {
     font-size: 0.85em;
-    color: var(--light-text-color);
-    margin-bottom: var(--spacing-sm);
-    flex-grow: 1; /* Permette alla descrizione di espandersi */
+    color: #666666; /* Grigio scuro per la descrizione */
+    margin-bottom: 10px;
     line-height: 1.4;
 }
 
 .dish-info .price {
-    font-size: 1em;
     font-weight: bold;
-    color: var(--primary-color);
-    margin-top: var(--spacing-xs);
+    color: #4CAF50; /* Verde per il prezzo (rimane per buona visibilità) */
+    font-size: 1.1em;
 }
 
 .add-to-cart-btn {
-    background-color: var(--primary-color);
+    background-color: #4CAF50;
     color: white;
+    border: none;
     border-radius: 50%;
-    width: 36px;
-    height: 36px;
+    width: 35px;
+    height: 35px;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     font-size: 1.2em;
-    position: absolute; /* Posizionamento assoluto */
-    bottom: var(--spacing-sm);
-    right: var(--spacing-sm);
-    box-shadow: var(--shadow-light);
-    transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.add-to-cart-btn:hover,
-.add-to-cart-btn:focus {
-    background-color: var(--secondary-color); /* Colore diverso al hover */
-    transform: scale(1.05);
-    outline: none;
-}
-
-
-/* --- Navbar Inferiore --- */
-.app-navbar {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: var(--navbar-bg);
-    box-shadow: var(--shadow-medium);
-    position: fixed;
+    cursor: pointer;
+    position: absolute;
     bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 70px;
-    z-index: 1000;
-    border-top: 1px solid var(--border-color);
+    right: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+    transition: background-color 0.2s ease;
 }
 
-.app-navbar .nav-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--light-text-color);
-    font-size: 0.8em;
-    padding: 5px;
-    flex: 1; /* Distribuisce lo spazio equamente */
-    transition: color 0.2s ease;
-    min-width: 60px; /* Assicura un minimo di larghezza */
+.add-to-cart-btn:hover {
+    background-color: #45a049;
 }
 
-.app-navbar .nav-item i {
-    font-size: 1.5em;
-    margin-bottom: 4px;
-}
+/* Responsività per schermi più grandi (simula un contenitore mobile centrato) */
+@media (min-width: 768px) {
+    body {
+        max-width: 450px; /* Larghezza tipica di un dispositivo mobile */
+        margin: 0 auto; /* Centra l'app sullo schermo grande */
+        border-left: 1px solid #333333; /* Bordo scuro per staccare dal body generale */
+        border-right: 1px solid #333333; /* Bordo scuro per staccare dal body generale */
+        box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    }
 
-.app-navbar .nav-item.active {
-    color: var(--primary-color);
-    font-weight: bold;
-}
-
-.app-navbar .nav-item:hover,
-.app-navbar .nav-item:focus {
-    color: var(--primary-color);
-    outline: none;
-}
-
-/* --- Media Queries per Schermi più Grandi (Tablet e Desktop) --- */
-@media (min-width: 600px) {
     .app-header {
+        padding: 15px 30px;
+    }
+
+    .app-main-content {
+        padding: 20px 30px;
+    }
+
+    .search-bar {
+        max-width: none;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    .restaurant-card {
+        flex-direction: row;
+        height: 120px;
+    }
+
+    .restaurant-image {
+        width: 150px;
+        height: 100%;
+        border-radius: 10px 0 0 10px;
+    }
+
+    .restaurant-info {
+        flex-grow: 1;
+    }
+
+    .dish-card img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Effetto scroll per le sezioni del menu */
+html {
+    scroll-behavior: smooth;
+}
