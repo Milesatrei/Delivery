@@ -1,0 +1,502 @@
+/* Stile Generale */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    background-color: #000000; /* Sfondo nero puro per l'intera app */
+    color: #FFFFFF; /* Testo bianco puro */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header dell'App */
+.app-header {
+    background-color: #1a1a1a; /* Un nero leggermente più chiaro per l'header per distinzione */
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.4); /* Ombra più definita su nero */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.location-picker {
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #FFFFFF; /* Bianco tipico delle app delivery, ben visibile sul nero */
+}
+
+.location-picker i {
+    margin-right: 8px;
+    color: #FFFFFF;
+}
+
+.search-bar {
+    background-color: #333333; /* Sfondo scuro per la barra di ricerca */
+    border-radius: 25px;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    margin-left: 20px;
+    max-width: 300px;
+}
+
+.search-bar i {
+    color: #bbbbbb; /* Colore chiaro per le icone */
+    margin-right: 10px;
+}
+
+.search-bar input {
+    border: none;
+    background: none;
+    outline: none;
+    width: 100%;
+    font-size: 1em;
+    color: #FFFFFF; /* Testo input bianco */
+}
+.search-bar input::placeholder { /* Stile per il placeholder */
+    color: #bbbbbb;
+}
+
+
+.search-bar.mini {
+    flex-grow: 0;
+    margin-left: auto;
+    width: 180px;
+}
+
+/* Contenuto Principale */
+.app-main-content {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.app-main-content h2,
+.menu-section h3 { /* Anche i titoli delle sezioni del menu */
+    font-size: 1.6em;
+    margin-bottom: 20px;
+    color: #FFFFFF; /* Testo bianco per i titoli */
+    font-weight: bold;
+}
+
+/* Sezioni Promozioni */
+.promotions {
+    margin-bottom: 30px;
+}
+
+.promo-card {
+    margin-bottom: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.promo-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Sezioni Categorie */
+.categories {
+    margin-bottom: 30px;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+}
+
+.category-card {
+    background-color: #FF8C00; /* Arancione scuro per le caselle delle categorie */
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+    color: #333333; /* Testo scuro per garantire leggibilità su arancione */
+}
+
+.category-card:hover {
+    transform: translateY(-3px);
+}
+
+.category-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.category-card span {
+    font-weight: bold;
+    font-size: 0.95em;
+}
+
+/* Sezioni Ristoranti */
+.restaurants-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.restaurant-card {
+    background-color: #FF8C00; /* Arancione scuro per le caselle dei ristoranti */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+    color: #333333; /* Testo scuro sulle caselle arancioni */
+}
+
+.restaurant-card:hover {
+    transform: translateY(-3px);
+}
+
+.restaurant-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.restaurant-info {
+    padding: 15px;
+}
+
+.restaurant-info h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #333333; /* Testo scuro */
+    font-size: 1.3em;
+}
+
+.restaurant-info .cuisine {
+    color: #666666; /* Grigio più scuro per la cucina */
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.restaurant-info .details {
+    display: flex;
+    align-items: center;
+    font-size: 0.85em;
+    color: #555555; /* Grigio più scuro per i dettagli */
+    gap: 15px;
+}
+
+.restaurant-info .details span i {
+    color: #FFD700; /* Giallo brillante per le stelle per un buon contrasto sull'arancione */
+    margin-right: 5px;
+}
+
+.restaurant-info .price-range {
+    background-color: #FFA500; /* Un arancione leggermente più chiaro per il range di prezzo */
+    color: #333333; /* Testo scuro */
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 0.8em;
+}
+
+/* Navigation Bar */
+.app-navbar {
+    background-color: #1a1a1a; /* Sfondo scuro per la navbar */
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.4);
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #aaaaaa; /* Colore chiaro per gli item inattivi */
+    font-size: 0.8em;
+    transition: color 0.2s ease;
+}
+
+.nav-item i {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.nav-item.active {
+    color: #4CAF50; /* Verde attivo */
+}
+
+.nav-item:hover {
+    color: #4CAF50;
+}
+
+/* Stile per restaurant-menu.html */
+.menu-header {
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.menu-header h1 {
+    font-size: 1.5em;
+    margin: 0;
+    flex-grow: 1;
+    text-align: center;
+    color: #FFFFFF; /* Testo bianco */
+}
+
+.back-button {
+    font-size: 1.5em;
+    color: #4CAF50;
+    padding: 5px;
+}
+
+.cart-icon {
+    position: relative;
+    font-size: 1.5em;
+    color: #4CAF50;
+    margin-left: auto;
+}
+
+.cart-count {
+    background-color: #FF6B6B; /* Rosso per il badge */
+    color: white;
+    font-size: 0.7em;
+    border-radius: 50%;
+    padding: 2px 6px;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    text-align: center;
+    min-width: 18px;
+}
+
+.restaurant-info-banner {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.restaurant-info-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.restaurant-details-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.4)); /* Sfumatura più scura e intensa */
+    color: white;
+    padding: 20px;
+}
+
+.restaurant-details-overlay h2 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.8em;
+}
+
+.restaurant-details-overlay p {
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    color: #eeeeee; /* Testo più chiaro */
+}
+
+.restaurant-details-overlay .details {
+    color: #eeeeee; /* Testo più chiaro */
+}
+
+.menu-categories-nav {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333333; /* Bordo più scuro */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.menu-categories-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.menu-nav-item {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-right: 10px;
+    border-radius: 20px;
+    background-color: #333333; /* Sfondo scuro per i tag inattivi */
+    color: #f0f0f0; /* Testo bianco */
+    font-weight: bold;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    flex-shrink: 0;
+}
+
+.menu-nav-item.active {
+    background-color: #4CAF50; /* Verde attivo */
+    color: white;
+}
+
+.menu-nav-item:hover {
+    background-color: #555555; /* Colore al passaggio del mouse */
+}
+
+.menu-section {
+    margin-bottom: 30px;
+}
+
+.dish-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.dish-card {
+    background-color: #FF8C00; /* Arancione scuro per le schede piatto */
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25); /* Ombra più scura */
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    color: #333333; /* Testo scuro */
+}
+
+.dish-card img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.dish-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.dish-info h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+    color: #333333; /* Testo scuro */
+}
+
+.dish-info p {
+    font-size: 0.85em;
+    color: #666666; /* Grigio scuro per la descrizione */
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.dish-info .price {
+    font-weight: bold;
+    color: #4CAF50; /* Verde per il prezzo (rimane per buona visibilità) */
+    font-size: 1.1em;
+}
+
+.add-to-cart-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+    transition: background-color 0.2s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #45a049;
+}
+
+/* Responsività per schermi più grandi (simula un contenitore mobile centrato) */
+@media (min-width: 768px) {
+    body {
+        max-width: 450px; /* Larghezza tipica di un dispositivo mobile */
+        margin: 0 auto; /* Centra l'app sullo schermo grande */
+        border-left: 1px solid #333333; /* Bordo scuro per staccare dal body generale */
+        border-right: 1px solid #333333; /* Bordo scuro per staccare dal body generale */
+        box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    }
+
+    .app-header {
+        padding: 15px 30px;
+    }
+
+    .app-main-content {
+        padding: 20px 30px;
+    }
+
+    .search-bar {
+        max-width: none;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    .restaurant-card {
+        flex-direction: row;
+        height: 120px;
+    }
+
+    .restaurant-image {
+        width: 150px;
+        height: 100%;
+        border-radius: 10px 0 0 10px;
+    }
+
+    .restaurant-info {
+        flex-grow: 1;
+    }
+
+    .dish-card img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Effetto scroll per le sezioni del menu */
+html {
+    scroll-behavior: smooth;
+}

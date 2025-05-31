@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Delivery Simulata - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="location-picker">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Bologna, Via Rialto, 15</span>
+        </div>
+        <div class="search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Cerca ristoranti o piatti...">
+        </div>
+    </header>
+
+    <main class="app-main-content">
+        <section class="promotions">
+            <h2>Offerte per te</h2>
+            <div class="promo-card">
+                <img src="images/promo 1.jpeg" alt="Promo 1">
+            </div>
+            <div class="promo-card">
+                <img src="images/promo 2.jpeg" alt="Promo 2">
+            </div>
+        </section>
+
+        <section class="categories">
+            <h2>Cosa vuoi mangiare oggi?</h2>
+            <div class="category-grid">
+                <a href="#" class="category-card" data-category="pizza">
+                    <img src="https://via.placeholder.com/100x100/FFD166/FFFFFF?text=Pizza" alt="Pizza">
+                    <span>Pizza</span>
+                </a>
+                <a href="restaurants.html" class="category-card" data-category="hamburger">
+                    <img src="https://via.placeholder.com/100x100/06D6A0/FFFFFF?text=Hamburger" alt="Hamburger">
+                    <span>Hamburger</span>
+                </a>
+                <a href="#" class="category-card" data-category="sushi">
+                    <img src="https://via.placeholder.com/100x100/118AB2/FFFFFF?text=Sushi" alt="Sushi">
+                    <span>Sushi</span>
+                </a>
+                <a href="#" class="category-card" data-category="italiana">
+                    <img src="https://via.placeholder.com/100x100/EF476F/FFFFFF?text=Italiana" alt="Italiana">
+                    <span>Italiana</span>
+                </a>
+                <a href="#" class="category-card" data-category="dessert">
+                    <img src="https://via.placeholder.com/100x100/FFB300/FFFFFF?text=Dolci" alt="Dolci">
+                    <span>Dolci</span>
+                </a>
+            </div>
+        </section>
+
+        <section class="featured-restaurants">
+            <h2>Ristoranti in evidenza</h2>
+            <div class="restaurant-card">
+                <img src="https://via.placeholder.com/300x150/A7226E/FFFFFF?text=Pizzeria+Da+Gigi" alt="Pizzeria Da Gigi" class="restaurant-image">
+                <div class="restaurant-info">
+                    <h3>Pizzeria Da Gigi</h3>
+                    <p class="cuisine">Pizza, Italiana</p>
+                    <div class="details">
+                        <span class="rating"><i class="fas fa-star"></i> 4.7</span>
+                        <span class="delivery-time">30-40 min</span>
+                    </div>
+                </div>
+            </div>
+            <div class="restaurant-card">
+                <img src="https://via.placeholder.com/300x150/F8D44A/FFFFFF?text=Sushi+Zen" alt="Sushi Zen" class="restaurant-image">
+                <div class="restaurant-info">
+                    <h3>Sushi Zen</h3>
+                    <p class="cuisine">Sushi, Giapponese</p>
+                    <div class="details">
+                        <span class="rating"><i class="fas fa-star"></i> 4.6</span>
+                        <span class="delivery-time">45-55 min</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <nav class="app-navbar">
+        <a href="#" class="nav-item active">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fas fa-search"></i>
+            <span>Cerca</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fas fa-receipt"></i>
+            <span>Ordini</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fas fa-user"></i>
+            <span>Profilo</span>
+        </a>
+    </nav>
+    <script src="script.js"></script>
+</body>
+</html>
