@@ -355,20 +355,20 @@ a {
     padding: 10px 15px;
     margin-right: 10px;
     border-radius: 20px;
-    background-color: #333333; /* Sfondo scuro per i tag inattivi */
-    color: #f0f0f0; /* Testo bianco */
+    background-color: #FF8C00; /* Modificato: sfondo arancione per i tag inattivi */
+    color: #333333; /* Modificato: testo scuro per visibilità su arancione */
     font-weight: bold;
     transition: background-color 0.2s ease, color 0.2s ease;
     flex-shrink: 0;
 }
 
 .menu-nav-item.active {
-    background-color: #4CAF50; /* Verde attivo */
-    color: white;
+    background-color: #FF8C00; /* Modificato: sfondo arancione attivo */
+    color: #333333; /* Modificato: testo scuro per visibilità su arancione attivo */
 }
 
 .menu-nav-item:hover {
-    background-color: #555555; /* Colore al passaggio del mouse */
+    background-color: #FFA500; /* Modificato: arancione leggermente più chiaro al passaggio del mouse */
 }
 
 .menu-section {
