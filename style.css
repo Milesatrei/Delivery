@@ -3,7 +3,7 @@ body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     margin: 0;
     background-color: #000000; /* Sfondo nero puro per l'intera app */
-    color: #FFFFFF; /* Testo bianco puro */
+    color: #FFFFFF; /* Testo bianco puro per default */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -54,7 +54,7 @@ a {
 }
 
 .search-bar i {
-    color: #bbbbbb; /* Colore chiaro per le icone */
+    color: #FFFFFF; /* Icone barra di ricerca bianche */
     margin-right: 10px;
 }
 
@@ -67,7 +67,7 @@ a {
     color: #FFFFFF; /* Testo input bianco */
 }
 .search-bar input::placeholder { /* Stile per il placeholder */
-    color: #bbbbbb;
+    color: #bbbbbb; /* Placeholder leggermente meno brillante del testo principale */
 }
 
 .search-bar.mini {
@@ -87,7 +87,7 @@ a {
 .menu-section h3 { /* Anche i titoli delle sezioni del menu */
     font-size: 1.6em;
     margin-bottom: 20px;
-    color: #FFFFFF; /* Testo bianco per i titoli */
+    color: #FFFFFF; /* Titoli in bianco */
     font-weight: bold;
 }
 
@@ -131,7 +131,7 @@ a {
     text-align: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     transition: transform 0.2s ease;
-    color: #333333; /* Testo scuro per garantire leggibilità su arancione */
+    color: #FFFFFF; /* Testo categoria bianco */
 }
 
 .category-card:hover {
@@ -166,7 +166,7 @@ a {
     display: flex;
     flex-direction: column;
     transition: transform 0.2s ease;
-    color: #333333; /* Testo scuro sulle caselle arancioni */
+    color: #FFFFFF; /* Testo ristorante bianco */
 }
 
 .restaurant-card:hover {
@@ -187,12 +187,12 @@ a {
 .restaurant-info h3 {
     margin-top: 0;
     margin-bottom: 8px;
-    color: #333333; /* Testo scuro */
+    color: #FFFFFF; /* Titolo ristorante bianco */
     font-size: 1.3em;
 }
 
 .restaurant-info .cuisine {
-    color: #666666; /* Grigio più scuro per la cucina */
+    color: #FFFFFF; /* Testo cucina bianco */
     font-size: 0.9em;
     margin-bottom: 10px;
 }
@@ -201,7 +201,7 @@ a {
     display: flex;
     align-items: center;
     font-size: 0.85em;
-    color: #555555; /* Grigio più scuro per i dettagli */
+    color: #FFFFFF; /* Dettagli ristorante bianchi */
     gap: 15px;
 }
 
@@ -212,7 +212,7 @@ a {
 
 .restaurant-info .price-range {
     background-color: #FFA500; /* Un arancione leggermente più chiaro per il range di prezzo */
-    color: #333333; /* Testo scuro */
+    color: #FFFFFF; /* Testo range di prezzo bianco */
     padding: 2px 8px;
     border-radius: 5px;
     font-size: 0.8em;
@@ -264,19 +264,19 @@ a {
     margin: 0;
     flex-grow: 1;
     text-align: center;
-    color: #FFFFFF; /* Testo bianco */
+    color: #FFFFFF; /* Titolo menu bianco */
 }
 
 .back-button {
     font-size: 1.5em;
-    color: #4CAF50; /* Il verde rimane per il pulsante indietro */
+    color: #FFFFFF; /* Pulsante indietro bianco */
     padding: 5px;
 }
 
 .cart-icon {
     position: relative;
     font-size: 1.5em;
-    color: #4CAF50; /* Il verde rimane per l'icona del carrello */
+    color: #FFFFFF; /* Icona carrello bianca */
     margin-left: auto;
 }
 
@@ -321,16 +321,17 @@ a {
     margin-top: 0;
     margin-bottom: 5px;
     font-size: 1.8em;
+    color: #FFFFFF; /* Titolo overlay bianco */
 }
 
 .restaurant-details-overlay p {
     margin-bottom: 5px;
     font-size: 0.9em;
-    color: #eeeeee; /* Testo più chiaro */
+    color: #FFFFFF; /* Testo overlay bianco */
 }
 
 .restaurant-details-overlay .details {
-    color: #eeeeee; /* Testo più chiaro */
+    color: #FFFFFF; /* Dettagli overlay bianchi */
 }
 
 .menu-categories-nav {
@@ -354,19 +355,19 @@ a {
     margin-right: 10px;
     border-radius: 20px;
     background-color: #333333; /* Sfondo scuro per i tag inattivi */
-    color: #f0f0f0; /* Testo bianco */
+    color: #FFFFFF; /* Testo tag menu bianco */
     font-weight: bold;
     transition: background-color 0.2s ease, color 0.2s ease;
     flex-shrink: 0;
 }
 
 .menu-nav-item.active {
-    background-color: #4CAF50; /* Verde attivo */
+    background-color: #FF8C00; /* Arancione per il tag di categoria attivo */
     color: white;
 }
 
 .menu-nav-item:hover {
-    background-color: #555555; /* Colore al passaggio del mouse */
+    background-color: #555555; /* Colore al passaggio del mouse per i tag */
 }
 
 .menu-section {
@@ -386,7 +387,7 @@ a {
     display: flex;
     align-items: center;
     padding: 15px;
-    color: #333333; /* Testo scuro */
+    color: #FFFFFF; /* Testo scheda piatto bianco */
 }
 
 .dish-card img {
@@ -409,25 +410,25 @@ a {
     margin-top: 0;
     margin-bottom: 5px;
     font-size: 1.1em;
-    color: #333333; /* Testo scuro */
+    color: #FFFFFF; /* Titolo piatto bianco */
 }
 
 .dish-info p {
     font-size: 0.85em;
-    color: #666666; /* Grigio scuro per la descrizione */
+    color: #FFFFFF; /* Descrizione piatto bianca */
     margin-bottom: 10px;
     line-height: 1.4;
 }
 
 .dish-info .price {
     font-weight: bold;
-    color: #4CAF50; /* Verde per il prezzo (rimane per buona visibilità) */
+    color: #FFFFFF; /* Prezzo bianco */
     font-size: 1.1em;
 }
 
 .add-to-cart-btn {
     background-color: #000000; /* Pulsante "più" nero */
-    color: white; /* Testo del pulsante bianco */
+    color: #FFFFFF; /* Simbolo "+" bianco */
     border: none;
     border-radius: 50%;
     width: 35px;
@@ -435,7 +436,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.2em;
+    font-size: 1.2em; /* Dimensione del simbolo "+" */
     cursor: pointer;
     position: absolute;
     bottom: 0;
