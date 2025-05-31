@@ -247,7 +247,7 @@ a {
 }
 
 .nav-item.active {
-    color: #4CAF50; /* Verde attivo */
+    color: #FFFFFF; /*Bianco*/
 }
 
 .nav-item:hover {
@@ -277,7 +277,7 @@ a {
 .cart-icon {
     position: relative;
     font-size: 1.5em;
-    color: #4CAF50;
+    color: #FFFFFF;
     margin-left: auto;
 }
 
@@ -362,12 +362,12 @@ a {
 }
 
 .menu-nav-item.active {
-    background-color: #FFFFFF; /* Verde attivo */
+    background-color: #FFFFFF; /* Bianco */
     color: white;
 }
 
 .menu-nav-item:hover {
-    background-color: #555555; /* Colore al passaggio del mouse */
+    background-color: #FFFFFF; /* Colore al passaggio del mouse */
 }
 
 .menu-section {
@@ -422,7 +422,7 @@ a {
 
 .dish-info .price {
     font-weight: bold;
-    color: #FFFFFF; /* Verde per il prezzo (rimane per buona visibilità) */
+    color: #FFFFFF; /* Bianco per il prezzo (rimane per buona visibilità) */
     font-size: 1.1em;
 }
 
@@ -446,7 +446,7 @@ a {
 }
 
 .add-to-cart-btn:hover {
-    background-color: #45a049;
+    background-color: ##FFFFFF;
 }
 
 /* Responsività per schermi più grandi (simula un contenitore mobile centrato) */
