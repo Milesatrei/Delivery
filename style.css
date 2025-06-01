@@ -132,7 +132,7 @@ a {
     text-align: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     transition: transform 0.2s ease;
-    color: #333333; /* Testo scuro per garantire leggibilità su arancione */
+    color: #FFFFFF; /* Testo bianco per garantire leggibilità su arancione */
 }
 
 .category-card:hover {
@@ -167,7 +167,7 @@ a {
     display: flex;
     flex-direction: column;
     transition: transform 0.2s ease;
-    color: #333333; /* Testo scuro sulle caselle arancioni */
+    color: #FFFFFF; /* Testo scuro sulle caselle arancioni */
 }
 
 .restaurant-card:hover {
@@ -188,7 +188,7 @@ a {
 .restaurant-info h3 {
     margin-top: 0;
     margin-bottom: 8px;
-    color: #333333; /* Testo scuro */
+    color: #FFFFFF; /* Testo scuro */
     font-size: 1.3em;
 }
 
@@ -213,7 +213,7 @@ a {
 
 .restaurant-info .price-range {
     background-color: #FFA500; /* Un arancione leggermente più chiaro per il range di prezzo */
-    color: #333333; /* Testo scuro */
+    color: #FFFFFF; /* Testo scuro */
     padding: 2px 8px;
     border-radius: 5px;
     font-size: 0.8em;
@@ -278,7 +278,7 @@ a {
 .cart-icon {
     position: relative;
     font-size: 1.5em;
-    color: #4CAF50;
+    color: #FF8C00;
     margin-left: auto;
 }
 
@@ -356,7 +356,7 @@ a {
     margin-right: 10px;
     border-radius: 20px;
     background-color: #FF8C00; /* Modificato: sfondo arancione per i tag inattivi */
-    color: #333333; /* Modificato: testo scuro per visibilità su arancione */
+    color: #FFFFFF; /* Modificato: testo bianco per visibilità su arancione */
     font-weight: bold;
     transition: background-color 0.2s ease, color 0.2s ease;
     flex-shrink: 0;
@@ -364,7 +364,7 @@ a {
 
 .menu-nav-item.active {
     background-color: #FF8C00; /* Modificato: sfondo arancione attivo */
-    color: #333333; /* Modificato: testo scuro per visibilità su arancione attivo */
+    color: #FFFFFF; /* Modificato: testo bianco per visibilità su arancione attivo */
 }
 
 .menu-nav-item:hover {
@@ -388,7 +388,7 @@ a {
     display: flex;
     align-items: center;
     padding: 15px;
-    color: #333333; /* Testo scuro */
+    color: #FFFFFF; /* Testo scuro */
 }
 
 .dish-card img {
@@ -411,19 +411,19 @@ a {
     margin-top: 0;
     margin-bottom: 5px;
     font-size: 1.1em;
-    color: #333333; /* Testo scuro */
+    color: #FFFFFF; /* Testo scuro */
 }
 
 .dish-info p {
     font-size: 0.85em;
-    color: #666666; /* Grigio scuro per la descrizione */
+    color: #FFFFFF; /* Grigio scuro per la descrizione */
     margin-bottom: 10px;
     line-height: 1.4;
 }
 
 .dish-info .price {
     font-weight: bold;
-    color: #333333; /* Modificato: Prezzo dello stesso colore del testo nelle caselle */
+    color: #FFFFFF; /* Modificato: Prezzo dello stesso colore del testo nelle caselle */
     font-size: 1.1em;
 }
 
