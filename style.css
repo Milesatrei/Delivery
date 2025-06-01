@@ -202,7 +202,7 @@ a {
     display: flex;
     align-items: center;
     font-size: 0.85em;
-    color: #555555; /* Grigio più scuro per i dettagli */
+    color: #FFFFFF; /* Grigio più scuro per i dettagli */
     gap: 15px;
 }
 
