@@ -54,7 +54,7 @@ a {
 }
 
 .search-bar i {
-    color: #FF8C00; /* Modificato: icona cerca arancione */
+    color: #808080; /* Modificato: icona cerca grigio chiaro */
     margin-right: 10px;
 }
 
@@ -64,10 +64,10 @@ a {
     outline: none;
     width: 100%;
     font-size: 1em;
-    color: #FFFFFF; /* Modificato: testo input bianco */
+    color: #808080; /* Modificato: testo input grigio chiaro */
 }
 .search-bar input::placeholder { /* Stile per il placeholder */
-    color: #FFFFFF; /* Modificato: placeholder bianco */
+    color: #808080; /* Modificato: placeholder grigio chiaro */
 }
 
 
