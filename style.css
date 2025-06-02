@@ -67,7 +67,7 @@ a {
     color: #FFFFFF; /* Modificato: testo input bianco */
 }
 .search-bar input::placeholder { /* Stile per il placeholder */
-    color: #FF8C00; /* Modificato: placeholder arancione */
+    color: #FFFFFF; /* Modificato: placeholder bianco */
 }
 
 
