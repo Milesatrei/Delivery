@@ -167,7 +167,7 @@ a {
     display: flex;
     flex-direction: column;
     transition: transform 0.2s ease;
-    color: #FFFFFF; /* Testo scuro sulle caselle arancioni */
+    color: #FFFFFF; /* Testo bianco sulle caselle arancioni */
 }
 
 .restaurant-card:hover {
@@ -188,7 +188,7 @@ a {
 .restaurant-info h3 {
     margin-top: 0;
     margin-bottom: 8px;
-    color: #FFFFFF; /* Testo scuro */
+    color: #FFFFFF; /* Testo bianco */
     font-size: 1.3em;
 }
 
@@ -202,7 +202,7 @@ a {
     display: flex;
     align-items: center;
     font-size: 0.85em;
-    color: #FFFFFF; /* Grigio più scuro per i dettagli */
+    color: #FFFFFF; /* Bianco per i dettagli */
     gap: 15px;
 }
 
@@ -213,7 +213,7 @@ a {
 
 .restaurant-info .price-range {
     background-color: #FFA500; /* Un arancione leggermente più chiaro per il range di prezzo */
-    color: #FFFFFF; /* Testo scuro */
+    color: #FFFFFF; /* Testo bianco */
     padding: 2px 8px;
     border-radius: 5px;
     font-size: 0.8em;
